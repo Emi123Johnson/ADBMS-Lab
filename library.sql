@@ -1,0 +1,16 @@
+create database library;
+use library;
+create table bookdetails(bookno int primary key,bookname varchar(50),bookauthor varchar(25));
+create table issuedetails(issueid int primary key,bookno int,issuedate date,returnstatus varchar(5));
+create table returndetails(returnid int primary key,issueid int,bookno int,returndate date);
+insert into bookdetails values(101,'othello','shakespeare');
+insert into bookdetails values(102,'julius ceaser','shakespeare');
+insert into bookdetails values(103,'hamlet','shakespeare');
+insert into bookdetails values(104,'romeo juliet','shakespeare');
+select * from issuedetails;
+select * from returndetails;
+create table libhistory(bookno int primary key,bookstatus varchar(20));
+select * from libhistory;
+select operations('insert',8);
+select * from bookdetails;
+select returnUpdate(11);
